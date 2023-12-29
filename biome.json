@@ -27,7 +27,8 @@
   "javascript": {
     "formatter": {
       "enabled": true,
-      "indentStyle": "space"
+      "indentStyle": "space",
+      "semicolons": "asNeeded"
     }
   },
   "vcs": {
