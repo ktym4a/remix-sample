@@ -3,6 +3,7 @@ import type { FunctionComponent } from "react";
 
 import type { ContactRecord } from "../data";
 
+// biome-ignore lint/nursery/noDefaultExport: <explanation>
 export default function Contact() {
   const contact = {
     first: "Your",
@@ -77,13 +78,15 @@ const Favorite: FunctionComponent<{
 
   return (
     <Form method="post">
-      <button
+      {/* <button */}
+      <div
         aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
-        name="favorite"
-        value={favorite ? "false" : "true"}
+        // name="favorite"
+        // value={favorite ? "false" : "true"}
       >
         {favorite ? "★" : "☆"}
-      </button>
+        {/* </button> */}
+      </div>
     </Form>
   );
 };
