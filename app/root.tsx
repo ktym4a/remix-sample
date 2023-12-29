@@ -1,5 +1,5 @@
-import type { LinksFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import type { LinksFunction } from "@remix-run/node"
+import { json } from "@remix-run/node"
 import {
   Form,
   Link,
@@ -10,25 +10,25 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
-} from "@remix-run/react";
-import appStylesHref from "./app.css";
-import { getContacts } from "./data";
+} from "@remix-run/react"
+import appStylesHref from "./app.css"
+import { getContacts } from "./data"
 
 export const links: LinksFunction = () => [
   {
     rel: "stylesheet",
     href: appStylesHref,
   },
-];
+]
 
 export const loader = async () => {
-  const contacts = await getContacts();
-  return json({ contacts });
-};
+  const contacts = await getContacts()
+  return json({ contacts })
+}
 
 // biome-ignore lint/nursery/noDefaultExport: <explanation>
 export default function App() {
-  const { contacts } = useLoaderData<typeof loader>();
+  const { contacts } = useLoaderData<typeof loader>()
 
   return (
     <html lang="en">
@@ -90,5 +90,5 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
-  );
+  )
 }

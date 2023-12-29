@@ -1,7 +1,7 @@
-import { Form } from "@remix-run/react";
-import type { FunctionComponent } from "react";
+import { Form } from "@remix-run/react"
+import type { FunctionComponent } from "react"
 
-import type { ContactRecord } from "../data";
+import type { ContactRecord } from "../data"
 
 // biome-ignore lint/nursery/noDefaultExport: <explanation>
 export default function Contact() {
@@ -12,7 +12,7 @@ export default function Contact() {
     twitter: "your_handle",
     notes: "Some notes",
     favorite: true,
-  };
+  }
 
   return (
     <div id="contact">
@@ -57,9 +57,9 @@ export default function Contact() {
             onSubmit={(event) => {
               const response = confirm(
                 "Please confirm you want to delete this record.",
-              );
+              )
               if (!response) {
-                event.preventDefault();
+                event.preventDefault()
               }
             }}
           >
@@ -68,13 +68,13 @@ export default function Contact() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 const Favorite: FunctionComponent<{
-  contact: Pick<ContactRecord, "favorite">;
+  contact: Pick<ContactRecord, "favorite">
 }> = ({ contact }) => {
-  const favorite = contact.favorite;
+  const favorite = contact.favorite
 
   return (
     <Form method="post">
@@ -88,5 +88,5 @@ const Favorite: FunctionComponent<{
         {/* </button> */}
       </div>
     </Form>
-  );
-};
+  )
+}
