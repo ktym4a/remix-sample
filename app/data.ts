@@ -34,10 +34,12 @@ const fakeContacts = {
       .sort(sortBy("-createdAt", "last"));
   },
 
+  // biome-ignore lint/nursery/useAwait: <explanation>
   async get(id: string): Promise<ContactRecord | null> {
     return fakeContacts.records[id] || null;
   },
 
+  // biome-ignore lint/nursery/useAwait: <explanation>
   async create(values: ContactMutation): Promise<ContactRecord> {
     const id = values.id || Math.random().toString(36).substring(2, 9);
     const createdAt = new Date().toISOString();
@@ -78,6 +80,7 @@ export async function createEmptyContact() {
   return contact;
 }
 
+// biome-ignore lint/nursery/useAwait: <explanation>
 export async function getContact(id: string) {
   return fakeContacts.get(id);
 }
@@ -91,10 +94,12 @@ export async function updateContact(id: string, updates: ContactMutation) {
   return contact;
 }
 
+// biome-ignore lint/nursery/useAwait: <explanation>
 export async function deleteContact(id: string) {
   fakeContacts.destroy(id);
 }
 
+// biome-ignore lint/complexity/noForEach: <explanation>
 [
   {
     avatar:

@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+// biome-ignore lint/nursery/noDefaultExport: <explanation>
 export default function App() {
   return (
     <html lang="en">
@@ -28,7 +29,7 @@ export default function App() {
                 type="search"
                 name="q"
               />
-              <div id="search-spinner" aria-hidden hidden={true} />
+              <div id="search-spinner" aria-hidden={true} hidden={true} />
             </Form>
             <Form method="post">
               <button type="submit">New</button>
@@ -37,10 +38,10 @@ export default function App() {
           <nav>
             <ul>
               <li>
-                <a href={`/contacts/1`}>Your Name</a>
+                <a href={"/contacts/1"}>Your Name</a>
               </li>
               <li>
-                <a href={`/contacts/2`}>Your Friend</a>
+                <a href={"/contacts/2"}>Your Friend</a>
               </li>
             </ul>
           </nav>
